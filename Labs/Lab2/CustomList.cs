@@ -30,4 +30,9 @@ public class CustomList<T>
     {
         elements.RemoveAll(element => element.Equals(seekedElement));
     }
+
+    public T Get(int index)
+    {
+        return elements[index];
+    }
 }
