@@ -66,4 +66,9 @@ public class CustomList<T>
     {
         elements.Clear();
     }
+
+    public void Extend(CustomList<T> otheList)
+    {
+        elements.AddRange(otheList.elements);
+    }
 }
