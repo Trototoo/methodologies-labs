@@ -20,4 +20,9 @@ public class CustomList<T>
     {
         elements.Insert(index, value);
     }
+
+    public void Delete(int index)
+    {
+        elements.RemoveAt(index);
+    }
 }
