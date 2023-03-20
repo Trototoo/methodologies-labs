@@ -174,4 +174,24 @@ public class UnitTest1
         Assert.AreEqual(expectedEmptyListReversedString, emptyListReversedString);
         Assert.AreEqual(expectedSecondListReversedString, secondListReversedString);
     }
+
+    [TestMethod]
+    public void TestListFindFirstMethod()
+    {
+        CustomList<char> emptyList = new CustomList<char>();
+        CustomList<char> secondList = CreateTestList();
+        CustomList<char> thirdList = CreateTestListWithSameChars();
+
+        const int expectedEmptyListElementIndex = -1;
+        const int expectedSecondListElementIndex = 2;
+        const int expectedThirdListElementIndex = 3;
+
+        int emptyListElementIndex = emptyList.FindFirst('a');
+        int secondListElementIndex = secondList.FindFirst('c');
+        int thirdListElementIndex = thirdList.FindFirst('b');
+
+        Assert.AreEqual(expectedEmptyListElementIndex, emptyListElementIndex);
+        Assert.AreEqual(expectedSecondListElementIndex, secondListElementIndex);
+        Assert.AreEqual(expectedThirdListElementIndex, thirdListElementIndex);
+    }
 }
