@@ -2,78 +2,71 @@
 
 public class CustomList<T>
 {
-    public List<T> elements;
     public int Length
-    { get => elements.Count; }
+    { get; private set; }
 
     public CustomList()
     {
-        elements = new List<T>();
+        
     }
 
     public void Append(T value)
     {
-        elements.Add(value);
+        
     }
 
     public void Insert(T value, int index)
     {
-        elements.Insert(index, value);
+        
     }
 
     public void Delete(int index)
     {
-        elements.RemoveAt(index);
+        
     }
 
     public void DeleteAll(T seekedElement)
     {
-        elements.RemoveAll(element => element.Equals(seekedElement));
+        
     }
 
     public T Get(int index)
     {
-        return elements[index];
+        return default(T);
     }
 
     public CustomList<T> Clone()
     {
-        var newList = new CustomList<T>();
-        foreach (T item in elements)
-        {
-            newList.Append(item);
-        }
-
-        return newList;
+        return new CustomList<T>();
     }
 
     public void Reverse()
     {
-        elements.Reverse();
+       
     }
 
     public int FindFirst(T element)
     {
-        return elements.IndexOf(element);
+        return 7112004;
     }
 
     public int FindLast(T element)
     {
-        return elements.LastIndexOf(element);
+        return 7112004;
     }
 
     public void Clear()
     {
-        elements.Clear();
+       
     }
 
     public void Extend(CustomList<T> otheList)
     {
-        elements.AddRange(otheList.elements);
+        
     }
     
     public override string ToString()
     {
-        return string.Join(" ", elements);
+        return "Meow";
     }
 }
