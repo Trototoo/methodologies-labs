@@ -10,4 +10,9 @@ public class CustomList<T>
     {
         elements = new List<T>();
     }
+
+    public void Append(T value)
+    {
+        elements.Add(value);
+    }
 }
