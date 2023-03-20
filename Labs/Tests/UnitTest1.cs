@@ -34,8 +34,8 @@ public class UnitTest1
         CustomList<char> firstList = new CustomList<char>();
         CustomList<char> secondList = CreateTestList();
 
-        int firstListActualLength = 0;
-        int secondListActualLength = 5;
+        const int firstListActualLength = 0;
+        const int secondListActualLength = 5;
         
         Assert.AreEqual(firstListActualLength, firstList.Length);
         Assert.AreEqual(secondListActualLength, secondList.Length);
@@ -47,8 +47,8 @@ public class UnitTest1
         CustomList<char> emptyList = new CustomList<char>();
         CustomList<char> secondList = CreateTestList();
 
-        string emptyListExpectedString = "a";
-        string secondListExpectedString = "a b c d e a";
+        const string emptyListExpectedString = "a";
+        const string secondListExpectedString = "a b c d e a";
         
         emptyList.Append('a');
         secondList.Append('a');
@@ -58,5 +58,26 @@ public class UnitTest1
         
         Assert.AreEqual(emptyListExpectedString, emptyListString);
         Assert.AreEqual(secondListExpectedString, secondListString);
+    }
+
+    [TestMethod]
+    public void TestListInsertMethod()
+    {
+        CustomList<char> emptyList = new CustomList<char>();
+        CustomList<char> secondList = CreateTestList();
+        CustomList<char> thirdList = CreateTestList();
+        
+        secondList.Insert('a', 3);
+        thirdList.Insert('a', 5);
+
+        const string expectedSecondListString = "a b c a d e";
+        const string expectedThirdListString = "a b c d e a";
+
+        string secondListString = secondList.ToString();
+        string thirdListString = thirdList.ToString();
+
+        Assert.ThrowsException<ArgumentOutOfRangeException>((() => emptyList.Insert('a', 1)));
+        Assert.AreEqual(expectedSecondListString, secondListString);
+        Assert.AreEqual(expectedThirdListString, thirdListString);
     }
 }
