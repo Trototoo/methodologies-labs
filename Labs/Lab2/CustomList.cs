@@ -35,4 +35,15 @@ public class CustomList<T>
     {
         return elements[index];
     }
+
+    public CustomList<T> Clone()
+    {
+        var newList = new CustomList<T>();
+        foreach (T item in elements)
+        {
+            newList.Append(item);
+        }
+
+        return newList;
+    }
 }
