@@ -46,4 +46,9 @@ public class CustomList<T>
 
         return newList;
     }
+
+    public void Reverse()
+    {
+        elements.Reverse();
+    }
 }
