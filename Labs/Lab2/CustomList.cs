@@ -51,4 +51,9 @@ public class CustomList<T>
     {
         elements.Reverse();
     }
+
+    public int FindFirst(T element)
+    {
+        return elements.IndexOf(element);
+    }
 }
