@@ -80,4 +80,20 @@ public class UnitTest1
         Assert.AreEqual(expectedSecondListString, secondListString);
         Assert.AreEqual(expectedThirdListString, thirdListString);
     }
+
+    [TestMethod]
+    public void TestListDeleteMethod()
+    {
+        CustomList<char> emptyList = new CustomList<char>();
+        CustomList<char> secondList = CreateTestList();
+        
+        const string expectedSecondListString = "a c d e";
+        
+        secondList.Delete(1);
+
+        string secondListString = secondList.ToString();
+        
+        Assert.ThrowsException<ArgumentOutOfRangeException>((() => emptyList.Delete(0)));
+        Assert.AreEqual(expectedSecondListString, secondListString);
+    }
 }
