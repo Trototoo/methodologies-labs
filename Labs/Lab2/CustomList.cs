@@ -61,4 +61,9 @@ public class CustomList<T>
     {
         return elements.LastIndexOf(element);
     }
+
+    public void Clear()
+    {
+        elements.Clear();
+    }
 }
