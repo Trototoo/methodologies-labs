@@ -155,4 +155,23 @@ public class UnitTest1
         Assert.AreEqual(emptyListString, emptyListCloneString);
         Assert.AreEqual(secondListString, secondListCloneString);
     }
+
+    [TestMethod]
+    public void TestListReverseMethod()
+    {
+        CustomList<char> emptyList = new CustomList<char>();
+        CustomList<char> secondList = CreateTestList();
+
+        const string expectedEmptyListReversedString = "";
+        const string expectedSecondListReversedString = "e d c b a";
+        
+        emptyList.Reverse();
+        secondList.Reverse();
+
+        string emptyListReversedString = emptyList.ToString();
+        string secondListReversedString = secondList.ToString();
+
+        Assert.AreEqual(expectedEmptyListReversedString, emptyListReversedString);
+        Assert.AreEqual(expectedSecondListReversedString, secondListReversedString);
+    }
 }
