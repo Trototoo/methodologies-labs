@@ -71,4 +71,9 @@ public class CustomList<T>
     {
         elements.AddRange(otheList.elements);
     }
+    
+    public override string ToString()
+    {
+        return string.Join(" ", elements);
+    }
 }
