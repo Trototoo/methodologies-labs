@@ -1901,6 +1901,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
+      },
+      "Lab2/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Lab2.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lab2.dll": {}
+        }
       }
     }
   },
@@ -6761,10 +6771,16 @@
         "system.xml.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xmldocument.nuspec"
       ]
+    },
+    "Lab2/1.0.0": {
+      "type": "project",
+      "path": "../Lab2/Lab2.csproj",
+      "msbuildProject": "../Lab2/Lab2.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Lab2 >= 1.0.0",
       "MSTest.TestAdapter >= 2.2.10",
       "MSTest.TestFramework >= 2.2.10",
       "Microsoft.NET.Test.Sdk >= 17.3.2",
@@ -6795,7 +6811,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Олександр\\RiderProjects\\methodologies-labs\\Labs\\Lab2\\Lab2.csproj": {
+              "projectPath": "C:\\Users\\Олександр\\RiderProjects\\methodologies-labs\\Labs\\Lab2\\Lab2.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
