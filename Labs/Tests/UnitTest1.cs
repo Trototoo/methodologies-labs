@@ -194,4 +194,24 @@ public class UnitTest1
         Assert.AreEqual(expectedSecondListElementIndex, secondListElementIndex);
         Assert.AreEqual(expectedThirdListElementIndex, thirdListElementIndex);
     }
+    
+    [TestMethod]
+    public void TestListFindLastMethod()
+    {
+        CustomList<char> emptyList = new CustomList<char>();
+        CustomList<char> secondList = CreateTestList();
+        CustomList<char> thirdList = CreateTestListWithSameChars();
+
+        const int expectedEmptyListElementIndex = -1;
+        const int expectedSecondListElementIndex = -1;
+        const int expectedThirdListElementIndex = 4;
+
+        int emptyListElementIndex = emptyList.FindLast('a');
+        int secondListElementIndex = secondList.FindLast('y');
+        int thirdListElementIndex = thirdList.FindLast('b');
+
+        Assert.AreEqual(expectedEmptyListElementIndex, emptyListElementIndex);
+        Assert.AreEqual(expectedSecondListElementIndex, secondListElementIndex);
+        Assert.AreEqual(expectedThirdListElementIndex, thirdListElementIndex);
+    }
 }
