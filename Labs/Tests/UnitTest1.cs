@@ -40,4 +40,23 @@ public class UnitTest1
         Assert.AreEqual(firstListActualLength, firstList.Length);
         Assert.AreEqual(secondListActualLength, secondList.Length);
     }
+
+    [TestMethod]
+    public void TestListAppendMethod()
+    {
+        CustomList<char> emptyList = new CustomList<char>();
+        CustomList<char> secondList = CreateTestList();
+
+        string emptyListExpectedString = "a";
+        string secondListExpectedString = "a b c d e a";
+        
+        emptyList.Append('a');
+        secondList.Append('a');
+
+        string emptyListString = emptyList.ToString();
+        string secondListString = secondList.ToString();
+        
+        Assert.AreEqual(emptyListExpectedString, emptyListString);
+        Assert.AreEqual(secondListExpectedString, secondListString);
+    }
 }
