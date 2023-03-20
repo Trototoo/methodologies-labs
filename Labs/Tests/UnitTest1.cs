@@ -138,4 +138,21 @@ public class UnitTest1
         Assert.ThrowsException<ArgumentOutOfRangeException>(() => emptyList.Get(0));
         Assert.AreEqual(expectedSecondListItem, secondListItem);
     }
+
+    [TestMethod]
+    public void TestListCloneMethod()
+    {
+        CustomList<char> emptyList = new CustomList<char>();
+        CustomList<char> secondList = CreateTestList();
+        CustomList<char> emptyListClone = emptyList.Clone();
+        CustomList<char> secondListClone = secondList.Clone();
+
+        string emptyListString = emptyList.ToString();
+        string emptyListCloneString = emptyListClone.ToString();
+        string secondListString = secondList.ToString();
+        string secondListCloneString = secondListClone.ToString();
+        
+        Assert.AreEqual(emptyListString, emptyListCloneString);
+        Assert.AreEqual(secondListString, secondListCloneString);
+    }
 }
