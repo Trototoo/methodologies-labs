@@ -214,4 +214,30 @@ public class UnitTest1
         Assert.AreEqual(expectedSecondListElementIndex, secondListElementIndex);
         Assert.AreEqual(expectedThirdListElementIndex, thirdListElementIndex);
     }
+
+    [TestMethod]
+    public void TestListClearMethod()
+    {
+        CustomList<char> emptyList = new CustomList<char>();
+        CustomList<char> secondList = CreateTestList();
+
+        const string expectedEmptyListString = "";
+        const string expectedSecondListString = "";
+        const int expectedEmptyListLength = 0;
+        const int expectedSecondListLength = 0;
+        
+        emptyList.Clear();
+        secondList.Clear();
+
+        string emptyListString = emptyList.ToString();
+        string secondListString = secondList.ToString();
+
+        int emptyListLength = emptyList.Length;
+        int secondListLength = secondList.Length;
+        
+        Assert.AreEqual(expectedEmptyListString, emptyListString);
+        Assert.AreEqual(expectedEmptyListLength, emptyListLength);
+        Assert.AreEqual(expectedSecondListString, secondListString);
+        Assert.AreEqual(expectedSecondListLength, secondListLength);
+    }
 }
