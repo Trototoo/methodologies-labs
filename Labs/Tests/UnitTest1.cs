@@ -240,4 +240,26 @@ public class UnitTest1
         Assert.AreEqual(expectedSecondListString, secondListString);
         Assert.AreEqual(expectedSecondListLength, secondListLength);
     }
+
+    [TestMethod]
+    public void TestListExtendMethod()
+    {
+        CustomList<char> emptyList = new CustomList<char>();
+        CustomList<char> secondList = CreateTestList();
+        CustomList<char> thirdList = CreateTestListWithSameChars();
+
+        const string expectedEmptyListString = "a b c d e a a a b b";
+        const string expectedThirdListString = "a a a b b a b c d e a";
+        
+        emptyList.Extend(secondList);
+        secondList.Append('a');
+        emptyList.Extend(thirdList);
+        thirdList.Extend(secondList);
+
+        string emptyListString = emptyList.ToString();
+        string thirdListString = thirdList.ToString();
+
+        Assert.AreEqual(expectedEmptyListString, emptyListString);
+        Assert.AreEqual(expectedThirdListString, thirdListString);
+    }
 }
