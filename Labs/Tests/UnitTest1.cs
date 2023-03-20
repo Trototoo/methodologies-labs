@@ -125,4 +125,17 @@ public class UnitTest1
         Assert.AreEqual(expectedThirdListString, thirdListString);
         Assert.AreEqual(expectedFourthListString, fourthListString);
     }
+
+    [TestMethod]
+    public void TestListGetMethod()
+    {
+        CustomList<char> emptyList = new CustomList<char>();
+        CustomList<char> secondList = CreateTestList();
+
+        const char expectedSecondListItem = 'd';
+        char secondListItem = secondList.Get(3);
+
+        Assert.ThrowsException<ArgumentOutOfRangeException>(() => emptyList.Get(0));
+        Assert.AreEqual(expectedSecondListItem, secondListItem);
+    }
 }
