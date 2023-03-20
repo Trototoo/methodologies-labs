@@ -56,4 +56,9 @@ public class CustomList<T>
     {
         return elements.IndexOf(element);
     }
+
+    public int FindLast(T element)
+    {
+        return elements.LastIndexOf(element);
+    }
 }
