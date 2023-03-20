@@ -29,7 +29,15 @@ public class UnitTest1
     }
     
     [TestMethod]
-    public void TestMethod1()
+    public void TestListLength()
     {
+        CustomList<char> firstList = new CustomList<char>();
+        CustomList<char> secondList = CreateTestList();
+
+        int firstListActualLength = 0;
+        int secondListActualLength = 5;
+        
+        Assert.AreEqual(firstListActualLength, firstList.Length);
+        Assert.AreEqual(secondListActualLength, secondList.Length);
     }
 }
