@@ -25,4 +25,9 @@ public class CustomList<T>
     {
         elements.RemoveAt(index);
     }
+
+    public void DeleteAll(T seekedElement)
+    {
+        elements.RemoveAll(element => element.Equals(seekedElement));
+    }
 }
