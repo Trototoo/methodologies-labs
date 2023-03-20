@@ -15,4 +15,9 @@ public class CustomList<T>
     {
         elements.Add(value);
     }
+
+    public void Insert(T value, int index)
+    {
+        elements.Insert(index, value);
+    }
 }
